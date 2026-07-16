@@ -1,0 +1,7 @@
+.env
+awesome-semiconductor-startups/
+semiconductor_leadership_jobs_analysis.md
+*.log
+*~
+__pycache__/
+*.pyc

@@ -1,0 +1,2112 @@
+{
+  "Alif Semiconductor": {
+    "board_type": "lever",
+    "handle": "alifsemi",
+    "jobs_count": 12,
+    "tech": "AI",
+    "country": "US",
+    "website": "alifsemi.com"
+  },
+  "Anello": {
+    "board_type": "greenhouse",
+    "handle": "anellophotonics",
+    "jobs_count": 6,
+    "tech": "PHOTONICS",
+    "country": "US",
+    "website": "anellophotonics.com"
+  },
+  "Aspinity": {
+    "board_type": "greenhouse",
+    "handle": "aspinity",
+    "jobs_count": 0,
+    "tech": "AI",
+    "country": "US",
+    "website": "aspinity.com"
+  },
+  "Astrus": {
+    "board_type": "lever",
+    "handle": "astrus",
+    "jobs_count": 0,
+    "tech": "EDA",
+    "country": "CA",
+    "website": "astrus.ai"
+  },
+  "Baya Systems": {
+    "board_type": "greenhouse",
+    "handle": "bayasystems",
+    "jobs_count": 27,
+    "tech": "CHIPLETS",
+    "country": "US",
+    "website": "bayasystems.com"
+  },
+  "Beam": {
+    "board_type": "greenhouse",
+    "handle": "beam",
+    "jobs_count": 6,
+    "tech": "RF",
+    "country": "IL",
+    "website": "beamshaping.io"
+  },
+  "Eliyan": {
+    "board_type": "lever",
+    "handle": "eliyan",
+    "jobs_count": 22,
+    "tech": "CHIPLETS",
+    "country": "US",
+    "website": "eliyan.com"
+  },
+  "EnCharge AI": {
+    "board_type": "greenhouse",
+    "handle": "enchargeai",
+    "jobs_count": 0,
+    "tech": "AI",
+    "country": "US",
+    "website": "enchargeai.com"
+  },
+  "Eridan": {
+    "board_type": "greenhouse",
+    "handle": "eridan",
+    "jobs_count": 1,
+    "tech": "RF",
+    "country": "US",
+    "website": "eridan.io"
+  },
+  "Ethernovia": {
+    "board_type": "greenhouse",
+    "handle": "ethernovia",
+    "jobs_count": 30,
+    "tech": "NETWORKING",
+    "country": "US",
+    "website": "ethernovia.com"
+  },
+  "Extropic": {
+    "board_type": "lever",
+    "handle": "extropic",
+    "jobs_count": 0,
+    "tech": "AI",
+    "country": "US",
+    "website": "extropic.ai"
+  },
+  "Fractile": {
+    "board_type": "greenhouse",
+    "handle": "fractile",
+    "jobs_count": 56,
+    "tech": "AI",
+    "country": "UK",
+    "website": "fractile.ai"
+  },
+  "HaiLa": {
+    "board_type": "greenhouse",
+    "handle": "haila",
+    "jobs_count": 0,
+    "tech": "RF",
+    "country": "CA",
+    "website": "haila.io"
+  },
+  "Kepler Computing": {
+    "board_type": "lever",
+    "handle": "kepler",
+    "jobs_count": 30,
+    "tech": "HPC",
+    "country": "US",
+    "website": "keplercompute.com"
+  },
+  "Kittycad": {
+    "board_type": "greenhouse",
+    "handle": "zoo",
+    "jobs_count": 10,
+    "tech": "EDA",
+    "country": "US",
+    "website": "zoo.dev"
+  },
+  "Lemurian Labs": {
+    "board_type": "greenhouse",
+    "handle": "lemurianlabs",
+    "jobs_count": 8,
+    "tech": "AI",
+    "country": "CA",
+    "website": "lemurianlabs.com"
+  },
+  "Lightmatter": {
+    "board_type": "greenhouse",
+    "handle": "lightmatter",
+    "jobs_count": 52,
+    "tech": "PHOTONICS",
+    "country": "US",
+    "website": "lightmatter.co"
+  },
+  "Lumotive": {
+    "board_type": "lever",
+    "handle": "lumotive",
+    "jobs_count": 12,
+    "tech": "PHOTONICS",
+    "country": "US",
+    "website": "lumotive.com"
+  },
+  "Matx": {
+    "board_type": "greenhouse",
+    "handle": "matx",
+    "jobs_count": 28,
+    "tech": "AI",
+    "country": "US",
+    "website": "matx.com"
+  },
+  "NcodiN": {
+    "board_type": "greenhouse",
+    "handle": "ncodin",
+    "jobs_count": 3,
+    "tech": "PHOTONICS",
+    "country": "FR",
+    "website": "ncodin.com"
+  },
+  "OmniDesign": {
+    "board_type": "lever",
+    "handle": "omnidesigntech",
+    "jobs_count": 54,
+    "tech": "ANALOG",
+    "country": "US",
+    "website": "omnidesigntech.com"
+  },
+  "Plaid Semiconductor": {
+    "board_type": "lever",
+    "handle": "plaid",
+    "jobs_count": 0,
+    "tech": "CHIPLETS",
+    "country": "US",
+    "website": "plaidsemi.com"
+  },
+  "PQShield": {
+    "board_type": "greenhouse",
+    "handle": "pqshield",
+    "jobs_count": 7,
+    "tech": "QUANTUM",
+    "country": "UK",
+    "website": "pqshield.com"
+  },
+  "PsiQuantum": {
+    "board_type": "greenhouse",
+    "handle": "psiquantum",
+    "jobs_count": 96,
+    "tech": "QUANTUM",
+    "country": "US",
+    "website": "psiquantum.com"
+  },
+  "Tenstorrent": {
+    "board_type": "greenhouse",
+    "handle": "tenstorrent",
+    "jobs_count": 124,
+    "tech": "AI",
+    "country": "CA",
+    "website": "tenstorrent.com"
+  },
+  "VoltAI": {
+    "board_type": "lever",
+    "handle": "voltai",
+    "jobs_count": 5,
+    "tech": "EDA",
+    "country": "US",
+    "website": "voltai.com"
+  },
+  "zeroRISC": {
+    "board_type": "lever",
+    "handle": "zerorisc",
+    "jobs_count": 5,
+    "tech": "SECURITY",
+    "country": "US",
+    "website": "zerorisc.com"
+  },
+  "Cerebras Systems": {
+    "board_type": "greenhouse",
+    "handle": "cerebrassystems"
+  },
+  "SambaNova Systems": {
+    "board_type": "greenhouse",
+    "handle": "sambanovasystems"
+  },
+  "d-Matrix": {
+    "board_type": "ashby",
+    "handle": "d-matrix"
+  },
+  "SiFive": {
+    "board_type": "workday",
+    "host": "sifive.wd1.myworkdayjobs.com",
+    "tenant": "sifive",
+    "site": "sifivecareers"
+  },
+  "Alpha Design AI": {
+    "board_type": "ashby",
+    "handle": "alpha-design-ai-inc",
+    "tech": "EDA",
+    "country": "US",
+    "website": "alphadesign.ai"
+  },
+  "Allspice.io": {
+    "board_type": "ashby",
+    "handle": "allspice",
+    "tech": "EDA",
+    "country": "US",
+    "website": "allspice.io"
+  },
+  "Black Semiconductor": {
+    "board_type": "ashby",
+    "handle": "blacksemiconductor",
+    "tech": "MFG",
+    "country": "DE",
+    "website": "blacksemiconductor.de"
+  },
+  "Fabric Cryptography": {
+    "board_type": "lever",
+    "handle": "f16y",
+    "tech": "SECURITY",
+    "country": "US",
+    "website": "fabriccryptography.com"
+  },
+  "Etched": {
+    "board_type": "ashby",
+    "handle": "etched",
+    "tech": "AI",
+    "country": "US",
+    "website": "etched.com"
+  },
+  "Flux": {
+    "board_type": "ashby",
+    "handle": "flux",
+    "tech": "EDA",
+    "country": "US",
+    "website": "flux.ai"
+  },
+  "Jitx": {
+    "board_type": "lever",
+    "handle": "jitxinc",
+    "tech": "EDA",
+    "country": "US",
+    "website": "jitx.com"
+  },
+  "Innatera": {
+    "board_type": "ashby",
+    "handle": "innatera",
+    "tech": "AI",
+    "country": "NL",
+    "website": "innatera.com"
+  },
+  "Morse Micro": {
+    "board_type": "ashby",
+    "handle": "morse-micro",
+    "tech": "RF",
+    "country": "AU",
+    "website": "morsemicro.com"
+  },
+  "Quilter": {
+    "board_type": "ashby",
+    "handle": "quilter",
+    "tech": "EDA",
+    "country": "US",
+    "website": "quilter.ai"
+  },
+  "Quera Computing": {
+    "board_type": "greenhouse",
+    "handle": "queracomputing",
+    "tech": "QUANTUM",
+    "country": "US",
+    "website": "quera.com"
+  },
+  "Rain Neuromorphics": {
+    "board_type": "ashby",
+    "handle": "rain-ai-jobs",
+    "tech": "AI",
+    "country": "US",
+    "website": "rain.ai"
+  },
+  "Recogni": {
+    "board_type": "greenhouse",
+    "handle": "tensordyne",
+    "tech": "AI",
+    "country": "US",
+    "website": "recogni.com"
+  },
+  "RISE": {
+    "board_type": "lever",
+    "handle": "rise",
+    "tech": "EDA",
+    "country": "US",
+    "website": "Rise-da.com"
+  },
+  "Riverlane": {
+    "board_type": "greenhouse",
+    "handle": "riverlane",
+    "tech": "QUANTUM",
+    "country": "UK",
+    "website": "riverlane.com"
+  },
+  "Andapt": {
+    "board_type": "generic_careers",
+    "website": "andapt.com",
+    "tech": "ANALOG",
+    "country": "IE"
+  },
+  "Aniah": {
+    "board_type": "generic_careers",
+    "website": "aniah.fr",
+    "tech": "EDA",
+    "country": "FR"
+  },
+  "Akhetonics": {
+    "board_type": "generic_careers",
+    "website": "akhetonics.com",
+    "tech": "PHOTONICS",
+    "country": "DE"
+  },
+  "Anabrid": {
+    "board_type": "generic_careers",
+    "website": "anabrid.com",
+    "tech": "ANALOG",
+    "country": "DE"
+  },
+  "Argus Space": {
+    "board_type": "generic_careers",
+    "website": "argus-space.ch",
+    "tech": "RF",
+    "country": "CH"
+  },
+  "Atlant 3D": {
+    "board_type": "generic_careers",
+    "website": "atlant3d.com",
+    "tech": "MFG",
+    "country": "DK"
+  },
+  "Ahead Computing": {
+    "board_type": "generic_careers",
+    "website": "aheadcomputing.com",
+    "tech": "RISC-V",
+    "country": "US"
+  },
+  "Agile Analog": {
+    "board_type": "generic_careers",
+    "website": "agileanalog.com",
+    "tech": "EDA",
+    "country": "UK"
+  },
+  "Ambient Scientific": {
+    "board_type": "generic_careers",
+    "website": "ambientscientific.ai",
+    "tech": "ANALOG",
+    "country": "US"
+  },
+  "Atlantic Quantum": {
+    "board_type": "generic_careers",
+    "website": "atlantic-quantum.com",
+    "tech": "QUANTUM",
+    "country": "US"
+  },
+  "Atmosic": {
+    "board_type": "generic_careers",
+    "website": "atmosic.com",
+    "tech": "RF",
+    "country": "US"
+  },
+  "Accelercom": {
+    "board_type": "generic_careers",
+    "website": "accelercomm.com",
+    "tech": "RF",
+    "country": "UK"
+  },
+  "Aistorm": {
+    "board_type": "generic_careers",
+    "website": "aistorm.ai",
+    "tech": "AI",
+    "country": "US"
+  },
+  "Beacon Photonics": {
+    "board_type": "generic_careers",
+    "website": "beaconphotonics",
+    "tech": "PHOTONICS",
+    "country": "US"
+  },
+  "Akeana": {
+    "board_type": "generic_careers",
+    "website": "akeana.com",
+    "tech": "RISC-V",
+    "country": "US"
+  },
+  "Bluespec": {
+    "board_type": "generic_careers",
+    "website": "bluespec.com",
+    "tech": "RISC-V",
+    "country": "US"
+  },
+  "Azimuth AI": {
+    "board_type": "generic_careers",
+    "website": "Azimuth-ai.com",
+    "tech": "ASIC",
+    "country": "US"
+  },
+  "Applied Brain Research": {
+    "board_type": "generic_careers",
+    "website": "appliedbrainresearch.com",
+    "tech": "AI",
+    "country": "CA"
+  },
+  "Agnit Semiconductor": {
+    "board_type": "generic_careers",
+    "website": "agnitsemi.com",
+    "tech": "MFG",
+    "country": "IN"
+  },
+  "Blumind": {
+    "board_type": "generic_careers",
+    "website": "blumind.ai",
+    "tech": "AI",
+    "country": "CA"
+  },
+  "BoolSi": {
+    "board_type": "generic_careers",
+    "website": "boolsi.com",
+    "tech": "EDA",
+    "country": "US"
+  },
+  "Blueshift Memory": {
+    "board_type": "generic_careers",
+    "website": "blueshiftmemory.com",
+    "tech": "MEMORY",
+    "country": "UK"
+  },
+  "Agita Labs": {
+    "board_type": "generic_careers",
+    "website": "agitalabs.com",
+    "tech": "SECURITY",
+    "country": "US"
+  },
+  "Analog Photonics": {
+    "board_type": "generic_careers",
+    "website": "analogphotonics.com",
+    "tech": "PHOTONICS",
+    "country": "US"
+  },
+  "Blue Cheetah": {
+    "board_type": "generic_careers",
+    "website": "bcanalog.com",
+    "tech": "CHIPLETS",
+    "country": "US"
+  },
+  "Ayar Labs": {
+    "board_type": "generic_careers",
+    "website": "ayarlabs.com",
+    "tech": "PHOTONICS",
+    "country": "US"
+  },
+  "Bolt Semiconductor": {
+    "board_type": "generic_careers",
+    "website": "boltsemi.com",
+    "tech": "MFG",
+    "country": "US"
+  },
+  "Axelera": {
+    "board_type": "generic_careers",
+    "website": "axelera.ai",
+    "tech": "AI",
+    "country": "NL"
+  },
+  "Cellium": {
+    "board_type": "generic_careers",
+    "website": "cellium.net",
+    "tech": "RF",
+    "country": "IL"
+  },
+  "Celus": {
+    "board_type": "generic_careers",
+    "website": "celus.io",
+    "tech": "EDA",
+    "country": "DE"
+  },
+  "Avicena": {
+    "board_type": "generic_careers",
+    "website": "avicena.tech",
+    "tech": "PHOTONICS",
+    "country": "US"
+  },
+  "cadlab.io": {
+    "board_type": "generic_careers",
+    "website": "cadlab.io",
+    "tech": "EDA",
+    "country": "US"
+  },
+  "Celera": {
+    "board_type": "generic_careers",
+    "website": "celeratechnologies.com",
+    "tech": "EDA",
+    "country": "US"
+  },
+  "Cadstrom": {
+    "board_type": "generic_careers",
+    "website": "cadstrom.io",
+    "tech": "EDA",
+    "country": "CA"
+  },
+  "Ceremorphic": {
+    "board_type": "generic_careers",
+    "website": "ceremorphic.com",
+    "tech": "HPC",
+    "country": "US"
+  },
+  "Cerebras": {
+    "board_type": "generic_careers",
+    "website": "cerebras.net",
+    "tech": "HPC",
+    "country": "US"
+  },
+  "Celtro": {
+    "board_type": "generic_careers",
+    "website": "celtro.de",
+    "tech": "HEALTH",
+    "country": "DE"
+  },
+  "bos semiconductors": {
+    "board_type": "generic_careers",
+    "website": "bos-semi.com",
+    "tech": "ASIC",
+    "country": "KR"
+  },
+  "Celestial AI": {
+    "board_type": "generic_careers",
+    "website": "celestial.ai",
+    "tech": "PHOTONICS",
+    "country": "US"
+  },
+  "Chipflow": {
+    "board_type": "generic_careers",
+    "website": "chipflow.io",
+    "tech": "ASIC",
+    "country": "UK"
+  },
+  "Chipstack": {
+    "board_type": "generic_careers",
+    "website": "chipstack.com",
+    "tech": "EDA",
+    "country": "US"
+  },
+  "Chipletz": {
+    "board_type": "generic_careers",
+    "website": "chipletz.com",
+    "tech": "CHIPLETS",
+    "country": "US"
+  },
+  "Cornami": {
+    "board_type": "generic_careers",
+    "website": "cornami.com",
+    "tech": "HPC",
+    "country": "US"
+  },
+  "Cerfe Labs": {
+    "board_type": "generic_careers",
+    "website": "cerfelabs.com",
+    "tech": "MFG",
+    "country": "US"
+  },
+  "Circuit Mind": {
+    "board_type": "generic_careers",
+    "website": "circuitmind.io",
+    "tech": "EDA",
+    "country": "UK"
+  },
+  "Condor Computing": {
+    "board_type": "generic_careers",
+    "website": "condorcomputing.com",
+    "tech": "RISC-V",
+    "country": "US"
+  },
+  "Cycuity": {
+    "board_type": "generic_careers",
+    "website": "cycuity.com",
+    "tech": "EDA",
+    "country": "US"
+  },
+  "DASH Tech IC": {
+    "board_type": "generic_careers",
+    "website": "dashtechic.com",
+    "tech": "HPC",
+    "country": "US"
+  },
+  "Codasip": {
+    "board_type": "generic_careers",
+    "website": "codasip.com",
+    "tech": "RISC-V",
+    "country": "DE"
+  },
+  "Dfiant": {
+    "board_type": "generic_careers",
+    "website": "dfiant.works",
+    "tech": "EDA",
+    "country": "US"
+  },
+  "DeGirum": {
+    "board_type": "generic_careers",
+    "website": "degirum.ai",
+    "tech": "AI",
+    "country": "US"
+  },
+  "Dnotitia": {
+    "board_type": "generic_careers",
+    "website": "dnotitia.com",
+    "tech": "AI",
+    "country": "KR"
+  },
+  "DeepX": {
+    "board_type": "generic_careers",
+    "website": "deepx.ai",
+    "tech": "AI",
+    "country": "KR"
+  },
+  "EdgeQ": {
+    "board_type": "generic_careers",
+    "website": "edgeq.io",
+    "tech": "RF",
+    "country": "US"
+  },
+  "EdgeCortix": {
+    "board_type": "generic_careers",
+    "website": "edgecortix.com",
+    "tech": "AI",
+    "country": "US"
+  },
+  "enzzo": {
+    "board_type": "generic_careers",
+    "website": "enzzo.ai",
+    "tech": "EDA",
+    "country": "US"
+  },
+  "Evacorp": {
+    "board_type": "generic_careers",
+    "website": "evacorp.ai",
+    "tech": "AI",
+    "country": "US"
+  },
+  "Everactive": {
+    "board_type": "generic_careers",
+    "website": "everactive.com",
+    "tech": "SENSORS",
+    "country": "US"
+  },
+  "Efinix": {
+    "board_type": "generic_careers",
+    "website": "efinixinc.com",
+    "tech": "FPGA",
+    "country": "US"
+  },
+  "Denpaflux": {
+    "board_type": "generic_careers",
+    "website": "www.denpaflux.com",
+    "tech": "EDA",
+    "country": "DE"
+  },
+  "Classiq": {
+    "board_type": "generic_careers",
+    "website": "classiq.io",
+    "tech": "EDA",
+    "country": "IL"
+  },
+  "eTopus": {
+    "board_type": "generic_careers",
+    "website": "etopus.com",
+    "tech": "NETWORKING",
+    "country": "US"
+  },
+  "Ferric": {
+    "board_type": "generic_careers",
+    "website": "ferric.com",
+    "tech": "ANALOG",
+    "country": "US"
+  },
+  "Forefrontrf": {
+    "board_type": "generic_careers",
+    "website": "forefrontrf.com",
+    "tech": "RF",
+    "country": "UK"
+  },
+  "Dover": {
+    "board_type": "generic_careers",
+    "website": "dovermicrosystems.com",
+    "tech": "SECURITY",
+    "country": "US"
+  },
+  "Eridu AI": {
+    "board_type": "generic_careers",
+    "website": "eridu.ai",
+    "tech": "PHOTONICS",
+    "country": "US"
+  },
+  "DreamBig": {
+    "board_type": "generic_careers",
+    "website": "dreambigsemi.com",
+    "tech": "CHIPLETS",
+    "country": "US"
+  },
+  "Falcomm ": {
+    "board_type": "generic_careers",
+    "website": "myfalcomm.com",
+    "tech": "RF",
+    "country": "US"
+  },
+  "getinstachip": {
+    "board_type": "generic_careers",
+    "website": "getinstachip.com",
+    "tech": "EDA",
+    "country": "US"
+  },
+  "Furiosa": {
+    "board_type": "generic_careers",
+    "website": "furiosa.ai",
+    "tech": "AI",
+    "country": "KR"
+  },
+  "Exa Laboratories": {
+    "board_type": "generic_careers",
+    "website": "exalaboratories.com",
+    "tech": "AI",
+    "country": "US"
+  },
+  "Enosemi": {
+    "board_type": "generic_careers",
+    "website": "enosemi.com",
+    "tech": "PHOTONICS",
+    "country": "US"
+  },
+  "Groq": {
+    "board_type": "generic_careers",
+    "website": "groq.com",
+    "tech": "AI",
+    "country": "US"
+  },
+  "Heronic": {
+    "board_type": "generic_careers",
+    "website": "heronic.ai",
+    "tech": "EDA",
+    "country": "UK"
+  },
+  "FMC": {
+    "board_type": "generic_careers",
+    "website": "ferroelectric-memory.com",
+    "tech": "MFG",
+    "country": "DE"
+  },
+  "Hailo": {
+    "board_type": "generic_careers",
+    "website": "hailo.ai",
+    "tech": "AI",
+    "country": "IL"
+  },
+  "Exo Imaging": {
+    "board_type": "generic_careers",
+    "website": "exo.inc",
+    "tech": "HEALTH",
+    "country": "US"
+  },
+  "Esperanto": {
+    "board_type": "generic_careers",
+    "website": "esperanto.ai",
+    "tech": "HPC",
+    "country": "US"
+  },
+  "Flow Computing": {
+    "board_type": "generic_careers",
+    "website": "flow-computing.com",
+    "tech": "HPC",
+    "country": "FI"
+  },
+  "Finchetto": {
+    "board_type": "generic_careers",
+    "website": "finchetto.com",
+    "tech": "PHOTONICS",
+    "country": "UK"
+  },
+  "Gowin": {
+    "board_type": "generic_careers",
+    "website": "gowinsemi.com",
+    "tech": "FPGA",
+    "country": "CN"
+  },
+  "Ingonyama": {
+    "board_type": "generic_careers",
+    "website": "ingonyama.com",
+    "tech": "SECURITY",
+    "country": "IL"
+  },
+  "HawAI.tech": {
+    "board_type": "generic_careers",
+    "website": "hawai.tech",
+    "tech": "AI",
+    "country": "FR"
+  },
+  "Generation Alpha Transistor": {
+    "board_type": "generic_careers",
+    "website": "generation-alpha-transistor.com",
+    "tech": "EDA",
+    "country": "US"
+  },
+  "HyperCIM": {
+    "board_type": "generic_careers",
+    "website": "hypercim.com",
+    "tech": "AI",
+    "country": "UK"
+  },
+  "HyperAccel": {
+    "board_type": "generic_careers",
+    "website": "hyperaccel.ai",
+    "tech": "AI",
+    "country": "KR"
+  },
+  "Inspire Semi": {
+    "board_type": "generic_careers",
+    "website": "inspiresemi.com",
+    "tech": "HPC",
+    "country": "US"
+  },
+  "Kinara": {
+    "board_type": "generic_careers",
+    "website": "kinara.ai",
+    "tech": "AI",
+    "country": "US"
+  },
+  "Kandou": {
+    "board_type": "generic_careers",
+    "website": "kandou.com",
+    "tech": "NETWORKING",
+    "country": "CH"
+  },
+  "Hyperlume": {
+    "board_type": "generic_careers",
+    "website": "hyperlume.com",
+    "tech": "PHOTONICS",
+    "country": "CA"
+  },
+  "Fermionic": {
+    "board_type": "generic_careers",
+    "website": "fermionic.design",
+    "tech": "ANALOG",
+    "country": "IN"
+  },
+  "Light Solver": {
+    "board_type": "generic_careers",
+    "website": "lightsolver.com",
+    "tech": "PHOTONICS",
+    "country": "IL"
+  },
+  "InCore Semi": {
+    "board_type": "generic_careers",
+    "website": "incoresemi.com",
+    "tech": "RISC-V",
+    "country": "IN"
+  },
+  "Lighton": {
+    "board_type": "generic_careers",
+    "website": "lighton.ai",
+    "tech": "PHOTONICS",
+    "country": "FR"
+  },
+  "Gemesys": {
+    "board_type": "generic_careers",
+    "website": "gemesys.tech",
+    "tech": "AI",
+    "country": "DE"
+  },
+  "Krutrim": {
+    "board_type": "generic_careers",
+    "website": "olakrutrim.com",
+    "tech": "AI",
+    "country": "IN"
+  },
+  "Mesa Quantum": {
+    "board_type": "generic_careers",
+    "website": "mesaquantum.com",
+    "tech": "QUANTUM",
+    "country": "US"
+  },
+  "Memryx": {
+    "board_type": "generic_careers",
+    "website": "memryx.com",
+    "tech": "AI",
+    "country": "US"
+  },
+  "Luminous Computing": {
+    "board_type": "generic_careers",
+    "website": "luminous.com",
+    "tech": "PHOTONICS",
+    "country": "US"
+  },
+  "MetisX": {
+    "board_type": "generic_careers",
+    "website": "metix.com",
+    "tech": "MEMORY",
+    "country": "KR"
+  },
+  "Lightelligence": {
+    "board_type": "generic_careers",
+    "website": "lightelligence.ai",
+    "tech": "PHOTONICS",
+    "country": "US"
+  },
+  "Ipronics": {
+    "board_type": "generic_careers",
+    "website": "ipronics.com",
+    "tech": "PHOTONICS",
+    "country": "ES"
+  },
+  "Literal Labs": {
+    "board_type": "generic_careers",
+    "website": "Literal-labs.ai",
+    "tech": "AI",
+    "country": "UK"
+  },
+  "MangoBoost": {
+    "board_type": "generic_careers",
+    "website": "mangoboost.io",
+    "tech": "HPC",
+    "country": "US"
+  },
+  "Kneron": {
+    "board_type": "generic_careers",
+    "website": "kneron.com",
+    "tech": "AI",
+    "country": "US"
+  },
+  "Lubis EDA": {
+    "board_type": "generic_careers",
+    "website": "Lubis-eda.com",
+    "tech": "EDA",
+    "country": "DE"
+  },
+  "Jeeva Wireless": {
+    "board_type": "generic_careers",
+    "website": "jeevawireless.com",
+    "tech": "RF",
+    "country": "US"
+  },
+  "Motivo": {
+    "board_type": "generic_careers",
+    "website": "motivo.ai",
+    "tech": "EDA",
+    "country": "US"
+  },
+  "Lightium": {
+    "board_type": "generic_careers",
+    "website": "lightium.co",
+    "tech": "MFG",
+    "country": "CH"
+  },
+  "Mintneuro": {
+    "board_type": "generic_careers",
+    "website": "mintneuro.com",
+    "tech": "HEALTH",
+    "country": "UK"
+  },
+  "Mosaic SoC": {
+    "board_type": "generic_careers",
+    "website": "mosaic-soc.com/",
+    "tech": "ASIC",
+    "country": "CH"
+  },
+  "Morphing Machines": {
+    "board_type": "generic_careers",
+    "website": "morphing.in",
+    "tech": "HPC",
+    "country": "IN"
+  },
+  "Mobilint": {
+    "board_type": "generic_careers",
+    "website": "mobilint.com",
+    "tech": "AI",
+    "country": "KR"
+  },
+  "Mythic": {
+    "board_type": "generic_careers",
+    "website": "mythic-ai.com",
+    "tech": "AI",
+    "country": "US"
+  },
+  "Linctrinsic": {
+    "board_type": "generic_careers",
+    "website": "lintrinsicsemi.com",
+    "tech": "RF",
+    "country": "US"
+  },
+  "Neurxcore": {
+    "board_type": "generic_careers",
+    "website": "neurxcore.com",
+    "tech": "AI",
+    "country": "FR"
+  },
+  "Nanopower": {
+    "board_type": "generic_careers",
+    "website": "nanopowersemi.com",
+    "tech": "ANALOG",
+    "country": "NO"
+  },
+  "NextSilicon": {
+    "board_type": "generic_careers",
+    "website": "nextsilicon.com",
+    "tech": "HPC",
+    "country": "IL"
+  },
+  "Neologic": {
+    "board_type": "generic_careers",
+    "website": "neologic.com",
+    "tech": "MFG",
+    "country": "IL"
+  },
+  "Movellus": {
+    "board_type": "generic_careers",
+    "website": "movellus.com",
+    "tech": "ANALOG",
+    "country": "US"
+  },
+  "One Silicon Chip Photonics": {
+    "board_type": "generic_careers",
+    "website": "onesiliconchipphotonics.com",
+    "tech": "PHOTONICS",
+    "country": "CA"
+  },
+  "Novelda": {
+    "board_type": "generic_careers",
+    "website": "novelda.com",
+    "tech": "RF",
+    "country": "NO"
+  },
+  "OpenMachine": {
+    "board_type": "generic_careers",
+    "website": "openmachine.ai",
+    "tech": "AI",
+    "country": "US"
+  },
+  "Neureality": {
+    "board_type": "generic_careers",
+    "website": "neureality.ai",
+    "tech": "AI",
+    "country": "IL"
+  },
+  "Neurophos": {
+    "board_type": "generic_careers",
+    "website": "neurophos.com",
+    "tech": "PHOTONICS",
+    "country": "US"
+  },
+  "optoML": {
+    "board_type": "generic_careers",
+    "website": "optoml.ai",
+    "tech": "AI",
+    "country": "SG"
+  },
+  "Niobium Microsystems": {
+    "board_type": "generic_careers",
+    "website": "niobiummicrosystems.com",
+    "tech": "SECURITY",
+    "country": "US"
+  },
+  "NeuroBlade": {
+    "board_type": "generic_careers",
+    "website": "neuroblade.com",
+    "tech": "AI",
+    "country": "IL"
+  },
+  "Next Semiconductor": {
+    "board_type": "generic_careers",
+    "website": "nextsemi.com",
+    "tech": "SPACE",
+    "country": "US"
+  },
+  "Optalysys": {
+    "board_type": "generic_careers",
+    "website": "optalysys.com",
+    "tech": "PHOTONICS",
+    "country": "UK"
+  },
+  "Owl": {
+    "board_type": "generic_careers",
+    "website": "owlai.us",
+    "tech": "SENSORS",
+    "country": "US"
+  },
+  "Pharrowtech": {
+    "board_type": "generic_careers",
+    "website": "pharrowtech.com",
+    "tech": "RF",
+    "country": "BE"
+  },
+  "Ozark ICs": {
+    "board_type": "generic_careers",
+    "website": "ozarkic.com",
+    "tech": "ANALOG",
+    "country": "US"
+  },
+  "Nubis Communication": {
+    "board_type": "generic_careers",
+    "website": "Nubis-inc.com",
+    "tech": "NETWORKING",
+    "country": "US"
+  },
+  "Novumind": {
+    "board_type": "generic_careers",
+    "website": "novumind.com",
+    "tech": "AI",
+    "country": "US"
+  },
+  "OniO": {
+    "board_type": "generic_careers",
+    "website": "onio.com",
+    "tech": "RF",
+    "country": "NO"
+  },
+  "Oxford Quantum Circuits": {
+    "board_type": "generic_careers",
+    "website": "oxfordquantumcircuits.com",
+    "tech": "QUANTUM",
+    "country": "UK"
+  },
+  "Phanofi": {
+    "board_type": "generic_careers",
+    "website": "phanofi.com",
+    "tech": "PHOTONICS",
+    "country": "DK"
+  },
+  "Panmnesia": {
+    "board_type": "generic_careers",
+    "website": "panmnesia.com",
+    "tech": "MEMORY",
+    "country": "KR"
+  },
+  "PointCloud": {
+    "board_type": "generic_careers",
+    "website": "point.cloud",
+    "tech": "SENSORS",
+    "country": "US"
+  },
+  "Pliops": {
+    "board_type": "generic_careers",
+    "website": "pliops.com",
+    "tech": "HPC",
+    "country": "IL"
+  },
+  "Precision Innovations": {
+    "board_type": "generic_careers",
+    "website": "precisioninno.com",
+    "tech": "EDA",
+    "country": "US"
+  },
+  "Polaris EO": {
+    "board_type": "generic_careers",
+    "website": "polariseo.com",
+    "tech": "PHOTONICS",
+    "country": "US"
+  },
+  "Qromis": {
+    "board_type": "generic_careers",
+    "website": "qromis.com",
+    "tech": "MFG",
+    "country": "US"
+  },
+  "Primis": {
+    "board_type": "generic_careers",
+    "website": "primis.ai",
+    "tech": "EDA",
+    "country": "US"
+  },
+  "Phoenix Semiconductor": {
+    "board_type": "generic_careers",
+    "website": "phoenixsemicorp.com",
+    "tech": "ASIC",
+    "country": "US"
+  },
+  "PseudolithIC": {
+    "board_type": "generic_careers",
+    "website": "pseudolithic.com",
+    "tech": "MFG",
+    "country": "US"
+  },
+  "Oso Semiconductor": {
+    "board_type": "generic_careers",
+    "website": "ososemi.com",
+    "tech": "RF",
+    "country": "US"
+  },
+  "Polyn Technology": {
+    "board_type": "generic_careers",
+    "website": "polyn.ai",
+    "tech": "AI",
+    "country": "IL"
+  },
+  "proteanTecs": {
+    "board_type": "generic_careers",
+    "website": "proteantecs.com",
+    "tech": "ANALOG",
+    "country": "IL"
+  },
+  "RaiderChip": {
+    "board_type": "generic_careers",
+    "website": "raiderchip.ai",
+    "tech": "AI",
+    "country": "ES"
+  },
+  "Quantum Motion": {
+    "board_type": "generic_careers",
+    "website": "quantummmotion.tech",
+    "tech": "QUANTUM",
+    "country": "UK"
+  },
+  "Raaam": {
+    "board_type": "generic_careers",
+    "website": "Raaam-tech.com",
+    "tech": "MEMORY",
+    "country": "IL"
+  },
+  "RapidSilicon": {
+    "board_type": "generic_careers",
+    "website": "rapidsilicon.com",
+    "tech": "FPGA",
+    "country": "US"
+  },
+  "PragmatiC": {
+    "board_type": "generic_careers",
+    "website": "pragmaticsemi.com",
+    "tech": "MFG",
+    "country": "UK"
+  },
+  "Quintessent": {
+    "board_type": "generic_careers",
+    "website": "quintessent.com",
+    "tech": "PHOTONICS",
+    "country": "US"
+  },
+  "Rapid Photonics": {
+    "board_type": "generic_careers",
+    "website": "rapidphotonics.com",
+    "tech": "MFG",
+    "country": "NL"
+  },
+  "Qualinx": {
+    "board_type": "generic_careers",
+    "website": "qualinx.io",
+    "tech": "RF",
+    "country": "NL"
+  },
+  "Redwood EDA": {
+    "board_type": "generic_careers",
+    "website": "redwoodeda.com",
+    "tech": "EDA",
+    "country": "US"
+  },
+  "Picocom": {
+    "board_type": "generic_careers",
+    "website": "picocom.com",
+    "tech": "RF",
+    "country": "UK"
+  },
+  "SambaNova": {
+    "board_type": "generic_careers",
+    "website": "sambanova.ai",
+    "tech": "AI",
+    "country": "US"
+  },
+  "Rivos": {
+    "board_type": "generic_careers",
+    "website": "rivosinc.com",
+    "tech": "RISC-V",
+    "country": "US"
+  },
+  "Ramon Space": {
+    "board_type": "generic_careers",
+    "website": "ramon.space",
+    "tech": "SPACE",
+    "country": "IL"
+  },
+  "Primemas": {
+    "board_type": "generic_careers",
+    "website": "primemas.com",
+    "tech": "CHIPLETS",
+    "country": "US"
+  },
+  "Quadric.io": {
+    "board_type": "generic_careers",
+    "website": "quadric.io",
+    "tech": "AI",
+    "country": "US"
+  },
+  "Rebellions": {
+    "board_type": "generic_careers",
+    "website": "rebellions.ai",
+    "tech": "AI",
+    "country": "KR"
+  },
+  "Ranovus": {
+    "board_type": "generic_careers",
+    "website": "ranovus.com",
+    "tech": "PHOTONICS",
+    "country": "CA"
+  },
+  "Sagence AI": {
+    "board_type": "generic_careers",
+    "website": "www.sagence-ai.com",
+    "tech": "AI",
+    "country": "US"
+  },
+  "Salience Labs": {
+    "board_type": "generic_careers",
+    "website": "saliencelabs.ai",
+    "tech": "PHOTONICS",
+    "country": "UK"
+  },
+  "RoboSense": {
+    "board_type": "generic_careers",
+    "website": "robosense.ai",
+    "tech": "SENSORS",
+    "country": "CN"
+  },
+  "Retym": {
+    "board_type": "generic_careers",
+    "website": "retym.com",
+    "tech": "AI",
+    "country": "US"
+  },
+  "Semidynamics": {
+    "board_type": "generic_careers",
+    "website": "semidynamics.com",
+    "tech": "RISC-V",
+    "country": "ES"
+  },
+  "RED Semiconductor": {
+    "board_type": "generic_careers",
+    "website": "redsemiconductor.com",
+    "tech": "HPC",
+    "country": "UK"
+  },
+  "Semron": {
+    "board_type": "generic_careers",
+    "website": "semron.ai",
+    "tech": "AI",
+    "country": "DE"
+  },
+  "Secqai": {
+    "board_type": "generic_careers",
+    "website": "secqai.com",
+    "tech": "QUANTUM",
+    "country": "UK"
+  },
+  "Semifive": {
+    "board_type": "generic_careers",
+    "website": "semifive.com",
+    "tech": "ASIC",
+    "country": "KR"
+  },
+  "Silogy": {
+    "board_type": "generic_careers",
+    "website": "silogy.io",
+    "tech": "EDA",
+    "country": "US"
+  },
+  "SiLC": {
+    "board_type": "generic_careers",
+    "website": "silc.com",
+    "tech": "PHOTONICS",
+    "country": "US"
+  },
+  "SemiQon": {
+    "board_type": "generic_careers",
+    "website": "semiqon.tech",
+    "tech": "QUANTUM",
+    "country": "FI"
+  },
+  "Scintil": {
+    "board_type": "generic_careers",
+    "website": "scintil-photonics.com",
+    "tech": "PHOTONICS",
+    "country": "FR"
+  },
+  "Silicon Box": {
+    "board_type": "generic_careers",
+    "website": "Silicon-box.com",
+    "tech": "MFG",
+    "country": "SG"
+  },
+  "Silimate": {
+    "board_type": "generic_careers",
+    "website": "silimate.com",
+    "tech": "EDA",
+    "country": "US"
+  },
+  "Saras Micro Devices": {
+    "board_type": "generic_careers",
+    "website": "sarasmicro.com",
+    "tech": "MFG",
+    "country": "US"
+  },
+  "Semify": {
+    "board_type": "generic_careers",
+    "website": "semify-eda.com",
+    "tech": "EDA",
+    "country": "DE"
+  },
+  "SiMa.ai": {
+    "board_type": "generic_careers",
+    "website": "sima.ai",
+    "tech": "AI",
+    "country": "US"
+  },
+  "Siliconally": {
+    "board_type": "generic_careers",
+    "website": "siliconally.com",
+    "tech": "NETWORKING",
+    "country": "DE"
+  },
+  "Scalinx": {
+    "board_type": "generic_careers",
+    "website": "scalinx.com",
+    "tech": "RF",
+    "country": "FR"
+  },
+  "Syntiant": {
+    "board_type": "generic_careers",
+    "website": "syntiant.com",
+    "tech": "AI",
+    "country": "US"
+  },
+  "Swave": {
+    "board_type": "generic_careers",
+    "website": "swave.io",
+    "tech": "PHOTONICS",
+    "country": "BE"
+  },
+  "Singular Photonics": {
+    "board_type": "generic_careers",
+    "website": "singularphotonics.com",
+    "tech": "SENSORS",
+    "country": "UK"
+  },
+  "StarFive": {
+    "board_type": "generic_careers",
+    "website": "starfivetech.com",
+    "tech": "RISC-V",
+    "country": "CN"
+  },
+  "Taalas": {
+    "board_type": "generic_careers",
+    "website": "taalas.com",
+    "tech": "AI",
+    "country": "CA"
+  },
+  "Teramount": {
+    "board_type": "generic_careers",
+    "website": "teramount.com",
+    "tech": "MFG",
+    "country": "IL"
+  },
+  "SiPearl": {
+    "board_type": "generic_careers",
+    "website": "sipearl.com",
+    "tech": "HPC",
+    "country": "FR"
+  },
+  "Synthara": {
+    "board_type": "generic_careers",
+    "website": "synthara.ai",
+    "tech": "AI",
+    "country": "CH"
+  },
+  "Speedata": {
+    "board_type": "generic_careers",
+    "website": "speedata.io",
+    "tech": "AI",
+    "country": "IL"
+  },
+  "Spark Micro": {
+    "board_type": "generic_careers",
+    "website": "sparkmicro.com",
+    "tech": "RF",
+    "country": "CA"
+  },
+  "Thintronics": {
+    "board_type": "generic_careers",
+    "website": "thintronics.com",
+    "tech": "MFG",
+    "country": "US"
+  },
+  "Trameto": {
+    "board_type": "generic_careers",
+    "website": "trameto.com",
+    "tech": "ANALOG",
+    "country": "UK"
+  },
+  "TriEye": {
+    "board_type": "generic_careers",
+    "website": "trieye.tech",
+    "tech": "SENSORS",
+    "country": "IL"
+  },
+  "Tetramem": {
+    "board_type": "generic_careers",
+    "website": "tetramem.com",
+    "tech": "AI",
+    "country": "US"
+  },
+  "Ubilite": {
+    "board_type": "generic_careers",
+    "website": "ubilite.com",
+    "tech": "RF",
+    "country": "US"
+  },
+  "SWIR Vision Systems": {
+    "board_type": "generic_careers",
+    "website": "swirvisionsystems.com",
+    "tech": "SENSORS",
+    "country": "US"
+  },
+  "Siphox": {
+    "board_type": "generic_careers",
+    "website": "siphoxhealth.com",
+    "tech": "HEALTH",
+    "country": "US"
+  },
+  "Upmem": {
+    "board_type": "generic_careers",
+    "website": "upmem.com",
+    "tech": "AI",
+    "country": "FR"
+  },
+  "Tachyum": {
+    "board_type": "generic_careers",
+    "website": "tachyum.com",
+    "tech": "HPC",
+    "country": "US"
+  },
+  "Uhnder": {
+    "board_type": "generic_careers",
+    "website": "uhnder.com",
+    "tech": "SENSORS",
+    "country": "US"
+  },
+  "Tandem PV": {
+    "board_type": "generic_careers",
+    "website": "tandempv.com",
+    "tech": "MFG",
+    "country": "US"
+  },
+  "Skycore Semiconductors": {
+    "board_type": "generic_careers",
+    "website": "skycore-semi.com",
+    "tech": "ANALOG",
+    "country": "DK"
+  },
+  "Untether AI": {
+    "board_type": "generic_careers",
+    "website": "untether.ai",
+    "tech": "AI",
+    "country": "CA"
+  },
+  "Ventana Micro": {
+    "board_type": "generic_careers",
+    "website": "ventanamicro.com",
+    "tech": "RISC-V",
+    "country": "US"
+  },
+  "Unifabrix": {
+    "board_type": "generic_careers",
+    "website": "unifabrix.com",
+    "tech": "NETWORKING",
+    "country": "IL"
+  },
+  "Wave Photonics": {
+    "board_type": "generic_careers",
+    "website": "wavephotonics.com",
+    "tech": "PHOTONICS",
+    "country": "UK"
+  },
+  "VerifAI": {
+    "board_type": "generic_careers",
+    "website": "verifai.ai",
+    "tech": "EDA",
+    "country": "US"
+  },
+  "VyperCore": {
+    "board_type": "generic_careers",
+    "website": "vypercore.com",
+    "tech": "RISC-V",
+    "country": "UK"
+  },
+  "Vaire Computing": {
+    "board_type": "generic_careers",
+    "website": "vaire.co",
+    "tech": "ANALOG",
+    "country": "UK"
+  },
+  "Vayyar": {
+    "board_type": "generic_careers",
+    "website": "vayyar.com",
+    "tech": "SENSORS",
+    "country": "IL"
+  },
+  "Xcelerium": {
+    "board_type": "generic_careers",
+    "website": "xcelerium.com",
+    "tech": "HPC",
+    "country": "US"
+  },
+  "ZeroASIC": {
+    "board_type": "generic_careers",
+    "website": "zeroasic.com",
+    "tech": "CHIPLETS",
+    "country": "US"
+  },
+  "Yorchip": {
+    "board_type": "generic_careers",
+    "website": "yorchip.com",
+    "tech": "CHIPLETS",
+    "country": "US"
+  },
+  "Vector Photonics": {
+    "board_type": "generic_careers",
+    "website": "vectorphotonics.co.uk",
+    "tech": "PHOTONICS",
+    "country": "UK"
+  },
+  "Xanadu": {
+    "board_type": "generic_careers",
+    "website": "xanadu.ai",
+    "tech": "PHOTONICS",
+    "country": "US"
+  },
+  "Zendar": {
+    "board_type": "generic_careers",
+    "website": "zendar.io",
+    "tech": "SENSORS",
+    "country": "US"
+  },
+  "Ubitium": {
+    "board_type": "generic_careers",
+    "website": "ubitium.com",
+    "tech": "AI",
+    "country": "DE"
+  },
+  "Volantis Semiconductor": {
+    "board_type": "generic_careers",
+    "website": "volantissemi.ai",
+    "tech": "AI",
+    "country": "US"
+  },
+  "Viqthor": {
+    "board_type": "generic_careers",
+    "website": "viqthor.com",
+    "tech": "QUANTUM",
+    "country": "FR"
+  },
+  "Usound": {
+    "board_type": "generic_careers",
+    "website": "usound.com",
+    "tech": "MEMS",
+    "country": "AU"
+  },
+  "Xscape Photonics": {
+    "board_type": "generic_careers",
+    "website": "xscapephotonics.com",
+    "tech": "PHOTONICS",
+    "country": "US"
+  },
+  "Welinq": {
+    "board_type": "generic_careers",
+    "website": "welinq.fr",
+    "tech": "QUANTUM",
+    "country": "FR"
+  },
+  "Xsight Labs": {
+    "board_type": "generic_careers",
+    "website": "xsightlabs.com",
+    "tech": "HPC",
+    "country": "IL"
+  },
+  "Zero Point Motion": {
+    "board_type": "generic_careers",
+    "website": "zeropointmotion.com",
+    "tech": "MEMS",
+    "country": "UK"
+  },
+  "Xconntech": {
+    "board_type": "generic_careers",
+    "website": "xconn-tech.com",
+    "tech": "HPC",
+    "country": "US"
+  },
+  "ZeroPoint": {
+    "board_type": "generic_careers",
+    "website": "zeropoint-tech.com",
+    "tech": "MEMORY",
+    "country": "US"
+  },
+  "Arago": {
+    "board_type": "ashby",
+    "handle": "arago",
+    "tech": "PHOTONICS",
+    "country": "FR",
+    "website": "arago.inc"
+  },
+  "Agentrys": {
+    "board_type": "generic_careers",
+    "website": "agentrys.ai",
+    "tech": "EDA",
+    "country": "US"
+  },
+  "Aule Technologies": {
+    "board_type": "generic_careers",
+    "website": "auletechnologies.com",
+    "tech": "EDA",
+    "country": "US"
+  },
+  "Build4Sim Inc": {
+    "board_type": "generic_careers",
+    "website": "build4sim.com",
+    "tech": "EDA",
+    "country": "2025"
+  },
+  "CircuitLeap.ai": {
+    "board_type": "generic_careers",
+    "website": "circuitleap.ai",
+    "tech": "EDA",
+    "country": "Portugal"
+  },
+  "Bronco AI": {
+    "board_type": "generic_careers",
+    "website": "bronco.ai",
+    "tech": "EDA",
+    "country": "US"
+  },
+  "Cyrillic": {
+    "board_type": "generic_careers",
+    "website": "cyrillic.tech",
+    "tech": "AI",
+    "country": "IT"
+  },
+  "Abacus Semiconductor": {
+    "board_type": "greenhouse",
+    "handle": "abacus",
+    "tech": "HPC",
+    "country": "US",
+    "website": "Abacus-semi.com"
+  },
+  "Belfort": {
+    "board_type": "generic_careers",
+    "website": "belfortlabs.com",
+    "tech": "SECURITY",
+    "country": "BE"
+  },
+  "Chipmind": {
+    "board_type": "generic_careers",
+    "website": "chipmind.ai",
+    "tech": "EDA",
+    "country": "CH"
+  },
+  "Atoms AI": {
+    "board_type": "generic_careers",
+    "website": "atomsai.net",
+    "tech": "EDA",
+    "country": "US"
+  },
+  "Athos Silicon": {
+    "board_type": "generic_careers",
+    "website": "athossilicon.com",
+    "tech": "CHIPLETS",
+    "country": "US"
+  },
+  "cassia.ai": {
+    "board_type": "generic_careers",
+    "website": "cassia.ai",
+    "tech": "AI",
+    "country": "US"
+  },
+  "Cognichip": {
+    "board_type": "generic_careers",
+    "website": "cognichip.ai",
+    "tech": "EDA",
+    "country": "US"
+  },
+  "Dust Photonics": {
+    "board_type": "generic_careers",
+    "website": "dustphotonics.com",
+    "tech": "PHOTONICS",
+    "country": "IL"
+  },
+  "Ascenium": {
+    "board_type": "generic_careers",
+    "website": "ascenium.com",
+    "tech": "HPC",
+    "country": "NO"
+  },
+  "Linque": {
+    "board_type": "greenhouse",
+    "handle": "linque",
+    "tech": "PHOTONICS",
+    "country": "DE",
+    "website": "linque.eu"
+  },
+  "Enlightra": {
+    "board_type": "generic_careers",
+    "website": "enlightra.com",
+    "tech": "PHOTONICS",
+    "country": "US"
+  },
+  "Equal1": {
+    "board_type": "generic_careers",
+    "website": "equal1.com",
+    "tech": "QUANTUM",
+    "country": "IE"
+  },
+  "Efficient Computer": {
+    "board_type": "greenhouse",
+    "handle": "efficientcomputer",
+    "tech": "HPC",
+    "country": "US",
+    "website": "efficient.computer"
+  },
+  "persimmons": {
+    "board_type": "generic_careers",
+    "website": "persimmons.ai",
+    "tech": "AI",
+    "country": "US"
+  },
+  "Lumai": {
+    "board_type": "generic_careers",
+    "website": "luma.ai",
+    "tech": "PHOTONICS",
+    "country": "UK"
+  },
+  "Diode Computers": {
+    "board_type": "generic_careers",
+    "website": "diode.computer",
+    "tech": "EDA",
+    "country": "US"
+  },
+  "Olix": {
+    "board_type": "generic_careers",
+    "website": "olix.com",
+    "tech": "AI",
+    "country": "UK"
+  },
+  "Lyte AI": {
+    "board_type": "generic_careers",
+    "website": "lyte.ai",
+    "tech": "AI",
+    "country": "US"
+  },
+  "Keysom": {
+    "board_type": "generic_careers",
+    "website": "keysom.io",
+    "tech": "RISC-V",
+    "country": "FR"
+  },
+  "Majestic Labs": {
+    "board_type": "generic_careers",
+    "website": "majestic-labs.ai",
+    "tech": "AI",
+    "country": "IL"
+  },
+  "Light Trace Photonics": {
+    "board_type": "generic_careers",
+    "website": "ltphotonics.co.uk",
+    "tech": "PHOTONICS",
+    "country": "UK"
+  },
+  "Qruise": {
+    "board_type": "generic_careers",
+    "website": "qruise.com",
+    "tech": "QUANTUM",
+    "country": "DE"
+  },
+  "Piris Labs": {
+    "board_type": "generic_careers",
+    "website": "pirislabs.io/",
+    "tech": "AI",
+    "country": "US"
+  },
+  "Simbricks": {
+    "board_type": "generic_careers",
+    "website": "simbricks.io",
+    "tech": "EDA",
+    "country": "DE"
+  },
+  "par.tcl": {
+    "board_type": "generic_careers",
+    "website": "partcl.com",
+    "tech": "EDA",
+    "country": "US"
+  },
+  "SiliconSpace": {
+    "board_type": "generic_careers",
+    "website": "siliconspace.org",
+    "tech": "EDA",
+    "country": "US"
+  },
+  "Verifaix": {
+    "board_type": "generic_careers",
+    "website": "verifaix.com",
+    "tech": "EDA",
+    "country": "US"
+  },
+  "Qant": {
+    "board_type": "generic_careers",
+    "website": "Qant.com",
+    "tech": "PHOTONICS",
+    "country": "DE"
+  },
+  "Netrasemi": {
+    "board_type": "generic_careers",
+    "website": "netrasemi.com",
+    "tech": "AI",
+    "country": "IN"
+  },
+  "Snowcap Compute": {
+    "board_type": "generic_careers",
+    "website": "snowcapcompute.com",
+    "tech": "HPC",
+    "country": "US"
+  },
+  "Spinncloud": {
+    "board_type": "generic_careers",
+    "website": "spinncloud.com",
+    "tech": "AI",
+    "country": "DE"
+  },
+  "Vsora": {
+    "board_type": "generic_careers",
+    "website": "vsora.com",
+    "tech": "AI",
+    "country": "FR"
+  },
+  "Visblsemi": {
+    "board_type": "generic_careers",
+    "website": "visiblsemi.com",
+    "tech": "EDA",
+    "country": "US"
+  },
+  "Amsimcel": {
+    "board_type": "generic_careers",
+    "website": "amsimcel.com",
+    "tech": "EDA",
+    "country": "RO"
+  },
+  "Silicon Assurance": {
+    "board_type": "generic_careers",
+    "website": "siliconassurance.com",
+    "tech": "EDA",
+    "country": "US"
+  },
+  "MZ Technologies": {
+    "board_type": "generic_careers",
+    "website": "genioevo.com",
+    "tech": "EDA",
+    "country": "IT"
+  },
+  "Spherical": {
+    "board_type": "generic_careers",
+    "website": "Spherical-systems.com",
+    "tech": "SPACE",
+    "country": "NL"
+  },
+  "XCENA": {
+    "board_type": "generic_careers",
+    "website": "xcena.com",
+    "tech": "MEMORY",
+    "country": "KR"
+  },
+  "Perceive": {
+    "board_type": "generic_careers",
+    "website": "perceive.io",
+    "tech": "AI",
+    "country": "US"
+  },
+  "Blaize": {
+    "board_type": "generic_careers",
+    "website": "blaize.com",
+    "tech": "AI",
+    "country": "US"
+  },
+  "Graphcore": {
+    "board_type": "greenhouse",
+    "handle": "graphcore",
+    "tech": "AI",
+    "country": "UK",
+    "website": "graphcore.ai"
+  },
+  "Flex Logix": {
+    "board_type": "generic_careers",
+    "website": "flex-logix.com",
+    "tech": "FPGA",
+    "country": "US"
+  },
+  "GrAI Matter Labs": {
+    "board_type": "generic_careers",
+    "website": "graimatterlabs.ai",
+    "tech": "AI",
+    "country": "FR"
+  },
+  "Ampere Computing": {
+    "board_type": "generic_careers",
+    "website": "amperecomputing.com",
+    "tech": "HPC",
+    "country": "US"
+  },
+  "Sapeon": {
+    "board_type": "generic_careers",
+    "website": "sapeon.com",
+    "tech": "AI",
+    "country": "KR"
+  },
+  "Ventana": {
+    "board_type": "greenhouse",
+    "handle": "ventana",
+    "tech": "RISC-V",
+    "country": "US",
+    "website": "ventanamicro.com"
+  },
+  "Untether": {
+    "board_type": "generic_careers",
+    "website": "untether.ai",
+    "tech": "AI",
+    "country": "CA"
+  },
+  "Nubis": {
+    "board_type": "generic_careers",
+    "website": "Nubis-inc.com",
+    "tech": "NETWORKING",
+    "country": "US"
+  },
+  "Blue Cheetah Analog": {
+    "board_type": "generic_careers",
+    "website": "bcanalog.com",
+    "tech": "CONNECTIVITY",
+    "country": "US"
+  },
+  "PA Semi": {
+    "board_type": "generic_careers",
+    "website": "siliconspace.org",
+    "tech": "EDA",
+    "country": "US"
+  },
+  "Astera": {
+    "board_type": "greenhouse",
+    "handle": "asteralabs",
+    "tech": "HPC",
+    "country": "US",
+    "website": "asteralabs.com"
+  },
+  "Dream Big": {
+    "board_type": "generic_careers",
+    "website": "dreambigsemi.com",
+    "tech": "CHIPLETS",
+    "country": "US"
+  },
+  "Neuroblade": {
+    "board_type": "generic_careers",
+    "website": "neuroblade.com",
+    "tech": "AI",
+    "country": "IL"
+  },
+  "Lion Semiconductor": {
+    "board_type": "generic_careers",
+    "website": "rebellions.ai",
+    "tech": "AI",
+    "country": "KR"
+  }
+}
