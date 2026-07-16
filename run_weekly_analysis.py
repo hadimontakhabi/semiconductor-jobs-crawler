@@ -11,7 +11,7 @@ from urllib.parse import urljoin, urlparse
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 # Configuration
-WORKSPACE_DIR = "/home/anonymous/Downloads/gemini-working"
+WORKSPACE_DIR = "/home/anonymous/Downloads/agy-working/semiconductor-jobs-crawler"
 REPO_DIR = os.path.join(WORKSPACE_DIR, "awesome-semiconductor-startups")
 REPORT_PATH = os.path.join(WORKSPACE_DIR, "semiconductor_leadership_jobs_analysis.md")
 
