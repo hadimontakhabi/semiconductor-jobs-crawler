@@ -725,6 +725,11 @@ def send_email(html_body):
 def main():
     update_repo()
     job_data = fetch_jobs()
+    total_jobs = sum(len(jobs) for jobs in job_data.values())
+    if total_jobs == 0:
+        print("WARNING: 0 matching jobs found across all companies. This usually indicates network failure or offline connectivity. Aborting report update and email delivery.")
+        return
+        
     report_md = generate_report(job_data)
     
     # Save file
