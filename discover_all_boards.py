@@ -22,27 +22,56 @@ class LinkParser(HTMLParser):
         super().__init__()
         self.base_url = base_url
         self.links = []
-        
+        self.ignore_tags = {'script', 'style', 'svg', 'noscript', 'head', 'meta', 'link'}
+        self.ignored_depth = 0
+        self.current_href = None
+        self.current_title = None
+        self.current_text = []
+
     def handle_starttag(self, tag, attrs):
-        if tag == 'a':
+        tag_lower = tag.lower()
+        if tag_lower in self.ignore_tags:
+            self.ignored_depth += 1
+            return
+        if self.ignored_depth > 0:
+            return
+
+        if tag_lower == 'a':
             attrs_dict = dict(attrs)
             href = attrs_dict.get('href')
             if href:
                 full_url = urljoin(self.base_url, href)
-                text = attrs_dict.get('title', '')
-                self.links.append((full_url, text))
-                
+                self.current_href = full_url
+                self.current_title = attrs_dict.get('title', '').strip()
+                self.current_text = []
+
+    def handle_endtag(self, tag):
+        tag_lower = tag.lower()
+        if tag_lower in self.ignore_tags and self.ignored_depth > 0:
+            self.ignored_depth -= 1
+            return
+        if self.ignored_depth > 0:
+            return
+
+        if tag_lower == 'a' and self.current_href:
+            text = ' '.join(''.join(self.current_text).split())
+            if not text and self.current_title:
+                text = self.current_title
+            if self.current_href:
+                self.links.append((self.current_href, text or ''))
+            self.current_href = None
+            self.current_title = None
+            self.current_text = []
+
     def handle_data(self, data):
-        if self.links:
-            url, text = self.links[-1]
-            if not text:
-                self.links[-1] = (url, data.strip())
+        if self.ignored_depth == 0 and self.current_href:
+            self.current_text.append(data)
 
 def extract_links(html, base_url):
     parser = LinkParser(base_url)
     try:
         parser.feed(html)
-    except:
+    except Exception:
         pass
     return parser.links
 

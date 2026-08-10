@@ -54,29 +54,144 @@ class LinkParser(HTMLParser):
         super().__init__()
         self.base_url = base_url
         self.links = []
-        
+        self.ignore_tags = {'script', 'style', 'svg', 'noscript', 'head', 'meta', 'link'}
+        self.ignored_depth = 0
+        self.current_href = None
+        self.current_title = None
+        self.current_text = []
+
     def handle_starttag(self, tag, attrs):
-        if tag == 'a':
+        tag_lower = tag.lower()
+        if tag_lower in self.ignore_tags:
+            self.ignored_depth += 1
+            return
+        if self.ignored_depth > 0:
+            return
+
+        if tag_lower == 'a':
             attrs_dict = dict(attrs)
             href = attrs_dict.get('href')
             if href:
                 full_url = urljoin(self.base_url, href)
-                text = attrs_dict.get('title', '')
-                self.links.append((full_url, text))
-                
+                self.current_href = full_url
+                self.current_title = attrs_dict.get('title', '').strip()
+                self.current_text = []
+
+    def handle_endtag(self, tag):
+        tag_lower = tag.lower()
+        if tag_lower in self.ignore_tags and self.ignored_depth > 0:
+            self.ignored_depth -= 1
+            return
+        if self.ignored_depth > 0:
+            return
+
+        if tag_lower == 'a' and self.current_href:
+            text = ' '.join(''.join(self.current_text).split())
+            if not text and self.current_title:
+                text = self.current_title
+            if self.current_href:
+                self.links.append((self.current_href, text or ''))
+            self.current_href = None
+            self.current_title = None
+            self.current_text = []
+
     def handle_data(self, data):
-        if self.links:
-            url, text = self.links[-1]
-            if not text:
-                self.links[-1] = (url, data.strip())
+        if self.ignored_depth == 0 and self.current_href:
+            self.current_text.append(data)
 
 def extract_links(html, base_url):
     parser = LinkParser(base_url)
     try:
         parser.feed(html)
-    except:
+    except Exception:
         pass
     return parser.links
+
+KNOWN_JOB_DOMAINS = {
+    'greenhouse.io', 'boards.greenhouse.io', 'job-boards.greenhouse.io',
+    'lever.co', 'jobs.lever.co',
+    'ashbyhq.com', 'jobs.ashbyhq.com',
+    'myworkdayjobs.com',
+    'breezy.hr',
+    'bamboohr.com',
+    'rippling.com',
+    'workable.com',
+    'smartrecruiters.com',
+    'personio.com',
+    'recruitee.com',
+    'greetinghr.com',
+    'jobvite.com',
+    'applytojob.com',
+    'notion.site',
+    'hire.lever.co'
+}
+
+NON_JOB_PATH_KEYWORDS = [
+    '/news/', '/news-', '/article/', '/articles/', '/blog/', '/press/', 
+    '/press-release/', '/press-releases/', '/type/news/', '/interview/', 
+    '/interviews/', '/about/', '/team/', '/leadership/', '/management/', 
+    '/sharing/', '/share-offsite/', '/share/', '/events/', '/media/', 
+    '/privacy/', '/terms/', '/contact/', '/investors/', '/products/',
+    '/podcast/', '/insights/', '/announcements/', '/publication/', '/publications/',
+    '/case-study/', '/case-studies/', '/whitepaper/', '/whitepapers/'
+]
+
+NON_JOB_TITLE_KEYWORDS = [
+    'appointed', 'appoints', 'joins', 'joining', 'announces', 'announced',
+    'wins', 'named', 'promoted', 'award', 'press release', 'interview',
+    'biography', 'profile', 'board director', 'working group chair',
+    'keynote', 'speaker', 'panelist', 'speaker series', 'read more',
+    'learn more', 'privacy policy', 'terms of use'
+]
+
+def is_valid_job_link(link, title, company_url):
+    if not link or not isinstance(link, str):
+        return False
+    
+    parsed = urlparse(link)
+    if parsed.scheme not in ('http', 'https'):
+        return False
+        
+    netloc = parsed.netloc.lower().replace('www.', '')
+    path = parsed.path.lower()
+    title_lower = (title or '').lower().strip()
+    
+    if 'linkedin.com' in netloc:
+        if '/in/' in path or '/sharing/' in path or '/share' in path or '/posts/' in path or '/company/' in path or '/pulse/' in path:
+            return False
+        if '/jobs/view/' not in path and '/jobs/' not in path:
+            return False
+            
+    non_job_domains = [
+        'businesswire.com', 'einpresswire.com', 'prnewswire.com', 'globenewswire.com',
+        'facebook.com', 'twitter.com', 'x.com', 'youtube.com', 'instagram.com',
+        'medium.com', 'vimeo.com', 'github.com', 'wikipedia.org'
+    ]
+    if any(domain in netloc for domain in non_job_domains):
+        return False
+
+    company_domain = urlparse(company_url).netloc.lower().replace('www.', '')
+    base_comp_domain = '.'.join(company_domain.split('.')[-2:]) if '.' in company_domain else company_domain
+    base_netloc = '.'.join(netloc.split('.')[-2:]) if '.' in netloc else netloc
+    
+    if base_comp_domain and base_comp_domain != base_netloc:
+        is_job_board = any(netloc.endswith(jdomain) or jdomain in netloc for jdomain in KNOWN_JOB_DOMAINS)
+        if not is_job_board:
+            return False
+            
+    if any(kw in path for kw in NON_JOB_PATH_KEYWORDS):
+        return False
+        
+    if title_lower.startswith('{') or '@context' in title_lower or 'schema.org' in title_lower or 'javascript:' in title_lower:
+        return False
+        
+    if any(phrase in title_lower for phrase in NON_JOB_TITLE_KEYWORDS):
+        return False
+
+    if len(title_lower) < 3 or title_lower in ['careers', 'jobs', 'home', 'about', 'contact', 'details', 'apply', 'view', 'apply now']:
+        return False
+        
+    return True
 
 def scan_html_for_boards(html):
     gh = GREENHOUSE_REGEX.search(html)
@@ -467,32 +582,36 @@ def fetch_jobs_for_company(comp_name, config, regex):
                                 career_urls.append(full_url)
                                 
                 if not career_urls:
-                    career_urls = [urljoin(url, "/careers"), urljoin(url, "/jobs")]
+                    career_urls = [urljoin(url, "/careers"), urljoin(url, "/jobs"), url]
+                else:
+                    career_urls.append(url)
                     
-                if career_urls:
-                    cu = career_urls[0]
-                    cr = requests.get(cu, timeout=5, headers=headers, allow_redirects=True)
-                    if cr.status_code == 200:
-                        clinks = extract_links(cr.text, cu)
-                        seen_links = set()
-                        for link, text in clinks:
-                            norm_link = link.split('#')[0].split('?')[0]
-                            if norm_link in seen_links:
-                                continue
-                            
-                            url_path = urlparse(link).path.lower()
-                            text_match = regex.search(text) if text else None
-                            url_match = regex.search(url_path)
-                            
-                            if text_match or url_match:
-                                clean_title = text.strip() if (text_match and len(text.strip()) > 5 and text.strip().lower() not in ["details", "apply", "view", "apply now"]) else clean_title_from_url(link)
-                                if clean_title and clean_title.lower() not in ["careers", "jobs", "home", "about", "contact"]:
-                                    jobs_list.append({
-                                        'title': clean_title,
-                                        'location': 'Careers Page',
-                                        'link': link
-                                    })
-                                    seen_links.add(norm_link)
+                seen_links = set()
+                for cu in career_urls[:3]:
+                    try:
+                        cr = requests.get(cu, timeout=5, headers=headers, allow_redirects=True)
+                        if cr.status_code == 200:
+                            clinks = extract_links(cr.text, cu)
+                            for link, text in clinks:
+                                norm_link = link.split('#')[0].split('?')[0]
+                                if norm_link in seen_links:
+                                    continue
+                                
+                                url_path = urlparse(link).path.lower()
+                                text_match = regex.search(text) if text else None
+                                url_match = regex.search(url_path)
+                                
+                                if text_match or url_match:
+                                    clean_title = text.strip() if (text_match and len(text.strip()) > 5 and text.strip().lower() not in ["details", "apply", "view", "apply now"]) else clean_title_from_url(link)
+                                    if clean_title and is_valid_job_link(link, clean_title, url):
+                                        jobs_list.append({
+                                            'title': clean_title,
+                                            'location': 'Careers Page',
+                                            'link': link
+                                        })
+                                        seen_links.add(norm_link)
+                    except Exception:
+                        pass
         except Exception:
             pass
             
