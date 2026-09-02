@@ -7,8 +7,8 @@ from urllib.parse import urljoin, urlparse
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from html.parser import HTMLParser
 
-WORKSPACE_DIR = "/home/anonymous/Downloads/gemini-working"
-CSV_PATH = os.path.join(WORKSPACE_DIR, "awesome-semiconductor-startups", "startups.csv")
+WORKSPACE_DIR = "/home/anonymous/code/semiconductor-jobs-crawler"
+CSV_PATH = os.path.join(WORKSPACE_DIR, "startups.csv")
 JSON_PATH = os.path.join(WORKSPACE_DIR, "all_discovered_boards.json")
 
 # Regex patterns for finding job boards in HTML
@@ -191,6 +191,17 @@ def guess_from_apis(name, domain_name):
         except:
             pass
             
+        # Ashby
+        try:
+            ashby_url = f"https://api.ashbyhq.com/posting-api/job-board/{candidate}"
+            r = requests.get(ashby_url, timeout=3, headers=headers)
+            if r.status_code == 200:
+                data = r.json()
+                if data.get('jobs'):
+                    return "ashby", {"handle": candidate}
+        except:
+            pass
+
     return None, None
 
 def discover_board(row):
