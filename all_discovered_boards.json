@@ -1341,7 +1341,7 @@
   },
   "Quantum Motion": {
     "board_type": "generic_careers",
-    "website": "quantummmotion.tech",
+    "website": "quantummotion.com",
     "tech": "QUANTUM",
     "country": "UK"
   },
@@ -1453,7 +1453,7 @@
   },
   "Neologic": {
     "board_type": "generic_careers",
-    "website": "neologic.com",
+    "website": "neologicvlsi.com",
     "tech": "MFG",
     "country": "IL"
   },
@@ -2002,5 +2002,65 @@
   "Nuvia": {
     "website": "https://nuvia.com",
     "board_type": "generic_careers"
+  },
+  "Movandi": {
+    "board_type": "generic_careers",
+    "website": "movandi.com",
+    "tech": "RF",
+    "country": "US"
+  },
+  "ximplic": {
+    "board_type": "generic_careers",
+    "website": "ximplic.com",
+    "tech": "EDA",
+    "country": "NL"
+  },
+  "ChipAgents": {
+    "board_type": "generic_careers",
+    "website": "chipagents.ai",
+    "tech": "EDA",
+    "country": "US"
+  },
+  "Ricursive Intelligence": {
+    "board_type": "generic_careers",
+    "website": "ricursive.com",
+    "tech": "EDA",
+    "country": "US"
+  },
+  "Magics Technologies": {
+    "board_type": "generic_careers",
+    "website": "magics.tech",
+    "tech": "SPACE",
+    "country": "BE"
+  },
+  "MetisX": {
+    "board_type": "generic_careers",
+    "website": "metix.com",
+    "tech": "MEMORY",
+    "country": "KR"
+  },
+  "Vinci": {
+    "board_type": "generic_careers",
+    "website": "getvinci.ai",
+    "tech": "EDA",
+    "country": "US"
+  },
+  "Celero Communications": {
+    "board_type": "generic_careers",
+    "website": "celero.inc",
+    "tech": "NETWORKING",
+    "country": "US"
+  },
+  "Unconventional AI": {
+    "board_type": "generic_careers",
+    "website": "unconv.ai",
+    "tech": "AI",
+    "country": "US"
+  },
+  "Maieutic Semiconductors": {
+    "board_type": "generic_careers",
+    "website": "maieuticsemi.com",
+    "tech": "EDA",
+    "country": "IN"
   }
 }

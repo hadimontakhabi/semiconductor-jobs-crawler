@@ -23,20 +23,24 @@ from collections import Counter
 # script's location so the script works in any checkout.
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 WORKSPACE_DIR = SCRIPT_DIR
-REPO_DIR = WORKSPACE_DIR
+REPO_DIR = os.path.join(WORKSPACE_DIR, "awesome-semiconductor-startups")
 REPORT_PATH = os.path.join(WORKSPACE_DIR, "semiconductor_leadership_jobs_analysis.md")
 BOARDS_DB_PATH = os.path.join(WORKSPACE_DIR, "all_discovered_boards.json")
 ALUMNI_JSON_PATH = os.path.join(WORKSPACE_DIR, "all_alumni_boards.json")
 ENV_PATH = os.path.join(WORKSPACE_DIR, ".env")
 
-# Load environment variables if .env exists
-smtp_config = {}
-if os.path.exists(ENV_PATH):
-    with open(ENV_PATH, "r") as f:
-        for line in f:
-            if "=" in line and not line.startswith("#"):
-                key, val = line.strip().split("=", 1)
-                smtp_config[key.strip()] = val.strip()
+# Load environment variables from os.environ and .env if present
+def get_smtp_config():
+    cfg = dict(os.environ)
+    if os.path.exists(ENV_PATH):
+        with open(ENV_PATH, "r") as f:
+            for line in f:
+                if "=" in line and not line.startswith("#"):
+                    key, val = line.strip().split("=", 1)
+                    cfg[key.strip()] = val.strip()
+    return cfg
+
+smtp_config = get_smtp_config()
 
 # ---------------------------------------------------------------------------
 # HTML helpers
@@ -83,7 +87,7 @@ class LinkParser(HTMLParser):
         super().__init__()
         self.base_url = base_url
         self.links = []
-        self.ignore_tags = {'script', 'style', 'svg', 'noscript', 'head', 'meta', 'link'}
+        self.ignore_tags = {'script', 'style', 'svg', 'noscript'}
         self.ignored_depth = 0
         self.current_href = None
         self.current_title = None
@@ -245,7 +249,8 @@ def is_valid_job_link(link, title, company_url):
     if any(domain in netloc for domain in non_job_domains):
         return False
 
-    if any(kw in path for kw in NON_JOB_PATH_KEYWORDS):
+    path_with_slash = path if path.endswith('/') else path + '/'
+    if any(kw in path_with_slash for kw in NON_JOB_PATH_KEYWORDS):
         return False
 
     if title_lower.startswith('{') or '@context' in title_lower or 'schema.org' in title_lower or 'javascript:' in title_lower:
@@ -389,6 +394,8 @@ def _extract_jobs_from_html(html, base_url, regex, seen_links):
             tlow = txt.lower()
             if any(generic in tlow for generic in ['view all', 'see all', 'browse all', 'all jobs', 'all openings', 'search jobs', 'all positions']):
                 continue
+            if not is_valid_job_link(link, txt, base_url):
+                continue
             jobs.append({'title': txt[:200], 'link': link, 'location': 'Careers Page'})
             seen_links.add(link.split('#')[0].split('?')[0])
     except ImportError:
@@ -488,7 +495,7 @@ def scrape_homepage_and_careers(url):
     # Find links that look like careers pages
     links = extract_links(html, url)
     career_urls = []
-    career_keywords = ["career", "job", "work", "join", "position", "hiring", "openings", "team", "vacanc"]
+    career_keywords = ["career", "job", "work", "join", "position", "hiring", "openings", "vacanc"]
     orig_domain = urlparse(url).netloc.replace("www.", "")
     for full_url, text in links:
         parsed_url = urlparse(full_url)
@@ -902,11 +909,24 @@ def fetch_jobs_for_company(comp_name, config, regex):
         try:
             r = requests.get(f"https://jobs.jobvite.com/{handle}/jobs", timeout=12, headers=headers)
             if r.status_code == 200:
-                # Jobvite's JSON API is /api/job?companyId=... but the public feed is HTML
-                # We rely on the public page scan below for generic jobvite.
-                pass
-        except Exception:
-            pass
+                seen_links = set()
+                jobs_list.extend(_extract_jobs_from_html(r.text, f"https://jobs.jobvite.com/{handle}/jobs", regex, seen_links))
+        except Exception as e:
+            print(f"Jobvite error for {comp_name}: {e}")
+
+    elif b_type == 'breezy':
+        url = config.get('url') or config.get('website')
+        if not url:
+            return comp_name, jobs_list
+        if not url.startswith('http'):
+            url = f"https://{url}"
+        try:
+            r = requests.get(url, timeout=12, headers=headers)
+            if r.status_code == 200:
+                seen_links = set()
+                jobs_list.extend(_extract_jobs_from_html(r.text, url, regex, seen_links))
+        except Exception as e:
+            print(f"Breezy error for {comp_name}: {e}")
 
     elif b_type == 'generic_careers':
         website = config.get('website') or ''
@@ -914,10 +934,8 @@ def fetch_jobs_for_company(comp_name, config, regex):
             return comp_name, jobs_list
         url = website if website.startswith("http") else f"https://{website}"
 
-        # Try Playwright-enhanced fetch for JS-heavy career pages
+        # Fetch homepage/career page
         r = _http_get(url, timeout=8, try_playwright=True)
-        if not r:
-            r = _http_get(url, timeout=8, try_playwright=False)
         if not r:
             return comp_name, jobs_list
         html = r.text
@@ -930,7 +948,7 @@ def fetch_jobs_for_company(comp_name, config, regex):
 
         links = extract_links(html, url)
         career_urls = []
-        career_keywords = ["career", "job", "work", "join", "position", "hiring", "openings", "vacanc", "team", "opportunit", "recruit", "opening", "hiring"]
+        career_keywords = ["career", "job", "work", "join", "position", "hiring", "openings", "vacanc", "opportunit", "recruit", "opening"]
         orig_domain = urlparse(url).netloc.replace("www.", "")
         for full_url, text in links:
             parsed_url = urlparse(full_url)
@@ -947,7 +965,7 @@ def fetch_jobs_for_company(comp_name, config, regex):
                 "/careers", "/jobs", "/careers/", "/jobs/",
                 "/join-us", "/work-with-us", "/join", "/work",
                 "/about/careers", "/company/careers", "/about/jobs",
-                "/team", "/opportunities", "/hiring", "/openings",
+                "/opportunities", "/hiring", "/openings",
                 "/vacancies", "/join-us/", "/careers/openings",
                 "/recruitment", "/employment", "/open-positions",
                 "/positions", "/apply", "/join-the-team",
@@ -961,8 +979,6 @@ def fetch_jobs_for_company(comp_name, config, regex):
         seen_links = set()
         for cu in career_urls[:8]:
             cr = _http_get(cu, timeout=6, try_playwright=True)
-            if not cr:
-                cr = _http_get(cu, timeout=6, try_playwright=False)
             if not cr:
                 continue
             # If the careers page itself has a known board, recurse
@@ -980,15 +996,10 @@ def fetch_jobs_for_company(comp_name, config, regex):
 
 def fetch_jobs(boards_db=None, keywords=None):
     """Fetch jobs for every company in the boards DB concurrently."""
-    if keywords is None:
-        keywords = [
-            "vice president", "head of", "chief", "director", "vp",
-            "architect", "fellow", "cto", "head", "lead",
-            "principal engineer", "distinguished engineer", "staff engineer",
-            "senior director", "group manager", "svp", "evp", "avp",
-            "cio", "cfo", "coo", "cpo", "cmo",
-        ]
-    regex = re.compile(r'\b(' + '|'.join(re.escape(k) for k in keywords) + r')\b', re.I)
+    if keywords is not None:
+        regex = re.compile(r'\b(' + '|'.join(re.escape(k) for k in keywords) + r')\b', re.I)
+    else:
+        regex = LEADERSHIP_REGEX
     if boards_db is None:
         boards_db = load_and_update_discovered_boards()
     results = {}
@@ -1051,16 +1062,18 @@ def _is_real_job_title(title):
     return True
 
 
+def _is_generic_page(link):
+    from urllib.parse import urlparse
+    p = urlparse(link or "").path.rstrip("/").lower()
+    return p in ("", "/careers", "/jobs", "/career", "/job", "/openings", "/positions", "/work-with-us", "/join-us", "/opportunities")
+
+
 def _normalize_job(title, link):
     from urllib.parse import urlparse
     p = urlparse(link or "")
     domain = p.netloc.lower().replace("www.", "")
     full_url = (p.path + "?" + p.query).lower()
     # Extract job ID from common URL patterns
-    # Greenhouse: ?gh_jid=XXXX
-    # Ashby: /jobs/{uuid} or ?id=XXXX
-    # Lever: /{uuid}
-    # Workday: /job/.../Title_R-XXXX
     job_id = None
     for pattern in [
         r"gh_jid=([0-9a-f]+)",     # Greenhouse
@@ -1074,11 +1087,10 @@ def _normalize_job(title, link):
             job_id = m.group(1)
             break
     if job_id:
-        return f"{domain}::{job_id}"
-    # Fallback: domain + path + normalized title
-    t = re.sub(r'\s+', ' ', (title or "").strip().lower()[:120])
-    path = p.path.rstrip('/')[:80]
-    return f"{domain}::{path}::{t}"
+        return f"{domain}::id::{job_id}"
+    # Fallback: domain + normalized title (letters and digits only)
+    t = re.sub(r'[^a-z0-9]', '', (title or "").lower())
+    return f"{domain}::title::{t}"
 
 
 def _dedupe_jobs(jobs):
@@ -1092,6 +1104,10 @@ def _dedupe_jobs(jobs):
         key = _normalize_job(title, link)
         if key not in seen:
             seen[key] = j
+        else:
+            # Upgrade from generic career listing link to specific job posting link if available
+            if _is_generic_page(seen[key].get("link")) and not _is_generic_page(link):
+                seen[key] = j
     return list(seen.values())
 
 
@@ -1282,12 +1298,13 @@ def generate_html_report(job_data):
 # Email
 # ---------------------------------------------------------------------------
 def send_email(html_body, subject="Weekly Semiconductor Leadership Jobs Update"):
-    sender_email = smtp_config.get("SENDER_EMAIL")
-    receiver_email = smtp_config.get("RECEIVER_EMAIL")
-    smtp_server = smtp_config.get("SMTP_SERVER")
-    smtp_port = int(smtp_config.get("SMTP_PORT", 587))
-    smtp_user = smtp_config.get("SMTP_USER")
-    smtp_pass = smtp_config.get("SMTP_PASSWORD")
+    config = get_smtp_config()
+    sender_email = config.get("SENDER_EMAIL")
+    receiver_email = config.get("RECEIVER_EMAIL")
+    smtp_server = config.get("SMTP_SERVER")
+    smtp_port = int(config.get("SMTP_PORT", 587))
+    smtp_user = config.get("SMTP_USER")
+    smtp_pass = config.get("SMTP_PASSWORD")
     if not (sender_email and receiver_email and smtp_server and smtp_user and smtp_pass):
         print("SMTP email configuration incomplete in .env. Skipping email delivery.")
         return False

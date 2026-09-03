@@ -22,7 +22,7 @@ class LinkParser(HTMLParser):
         super().__init__()
         self.base_url = base_url
         self.links = []
-        self.ignore_tags = {'script', 'style', 'svg', 'noscript', 'head', 'meta', 'link'}
+        self.ignore_tags = {'script', 'style', 'svg', 'noscript'}
         self.ignored_depth = 0
         self.current_href = None
         self.current_title = None
