@@ -46,8 +46,8 @@ You can set this script to run automatically every Monday at 9:00 AM using syste
 
    [Service]
    Type=oneshot
-   WorkingDirectory=/absolute/path/to/gemini-working
-   ExecStart=/bin/bash -c "python3 run_weekly_analysis.py >> /absolute/path/to/gemini-weekly.log 2>&1"
+   WorkingDirectory=/home/anonymous/code/semiconductor-jobs-crawler
+   ExecStart=/bin/bash -c "python3 run_weekly_analysis.py >> /home/anonymous/code/semiconductor-jobs-crawler/weekly-run.log 2>&1"
 
    [Install]
    WantedBy=default.target
