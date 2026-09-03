@@ -1513,10 +1513,12 @@
     "country": "UK"
   },
   "Semron": {
-    "board_type": "generic_careers",
+    "board_type": "personio",
     "website": "semron.ai",
     "tech": "AI",
-    "country": "DE"
+    "country": "DE",
+    "handle": "semron",
+    "tld": "de"
   },
   "SiLC": {
     "board_type": "generic_careers",
@@ -1953,20 +1955,6 @@
     "tech": "AI",
     "country": "US"
   },
-  "Cerebras Systems": {
-    "board_type": "greenhouse",
-    "handle": "cerebrassystems",
-    "tech": "HPC",
-    "country": "US",
-    "website": "cerebras.net"
-  },
-  "SambaNova Systems": {
-    "board_type": "greenhouse",
-    "handle": "sambanovasystems",
-    "tech": "AI",
-    "country": "US",
-    "website": "sambanova.ai"
-  },
   "Aeluma": {
     "website": "https://aeluma.com",
     "board_type": "generic_careers"
@@ -1988,10 +1976,6 @@
     "board_type": "generic_careers"
   },
   "GaN Systems": {
-    "website": "https://gan-systems.com",
-    "board_type": "generic_careers"
-  },
-  "Gan-Systems": {
     "website": "https://gan-systems.com",
     "board_type": "generic_careers"
   },

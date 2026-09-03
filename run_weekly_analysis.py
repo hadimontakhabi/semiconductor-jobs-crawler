@@ -80,6 +80,7 @@ BAMBOOHR_REGEX = re.compile(r'([^/"\']\s>]*\.bamboohr\.com/(?:jobs|careers)/?)',
 BREEZY_REGEX = re.compile(r'([^/"\']\s>]*\.breezy\.hr/)', re.I)
 JOBVITE_REGEX = re.compile(r'jobs\.jobvite\.com/([^/"\']\s>]+)', re.I)
 JOBVITE_ALT_REGEX = re.compile(r'jobs\.jobvite\.[a-z.]+/([^/"\']\s>]+)', re.I)
+PERSONIO_REGEX = re.compile(r'([a-zA-Z0-9-]+)\.jobs\.personio\.(de|com)', re.I)
 
 
 class LinkParser(HTMLParser):
@@ -152,6 +153,8 @@ KNOWN_JOB_DOMAINS = {
     'workable.com', 'apply.workable.com',
     'smartrecruiters.com', 'jobs.smartrecruiters.com',
     'personio.com', 'jobs.personio.com',
+    'personio.de', 'jobs.personio.de',
+    'ycombinator.com', 'workatastartup.com', 'wellfound.com',
     'recruitee.com', 'jobs.recruitee.com',
     'greetinghr.com',
     'jobvite.com', 'jobs.jobvite.com',
@@ -237,7 +240,7 @@ def is_valid_job_link(link, title, company_url):
     if 'linkedin.com' in netloc:
         if '/in/' in path or '/sharing/' in path or '/share' in path or '/posts/' in path or '/company/' in path or '/pulse/' in path:
             return False
-        if '/jobs/view/' not in path and '/jobs/' not in path:
+        if '/jobs/view/' not in path:
             return False
 
     non_job_domains = [
@@ -318,6 +321,13 @@ def scan_html_for_boards(html):
     bz = BREEZY_REGEX.search(html)
     if bz:
         return "breezy", {"url": bz.group(1).strip()}
+
+    pers = PERSONIO_REGEX.search(html)
+    if pers:
+        handle = pers.group(1).split('?')[0].strip()
+        tld = pers.group(2).lower()
+        if handle:
+            return "personio", {"handle": handle, "tld": tld}
 
     return None, None
 
@@ -500,7 +510,7 @@ def scrape_homepage_and_careers(url):
     for full_url, text in links:
         parsed_url = urlparse(full_url)
         curr_domain = parsed_url.netloc.replace("www.", "")
-        if orig_domain in curr_domain or curr_domain == "":
+        if orig_domain in curr_domain or curr_domain == "" or any(d in curr_domain for d in KNOWN_JOB_DOMAINS):
             path = parsed_url.path.lower()
             text_lower = text.lower() if text else ""
             if any(kw in path or kw in text_lower for kw in career_keywords):
@@ -658,7 +668,18 @@ def load_and_update_discovered_boards(force_rediscover=False):
     if os.path.exists(BOARDS_DB_PATH) and not force_rediscover:
         try:
             with open(BOARDS_DB_PATH, 'r') as f:
-                boards_db = json.load(f)
+                raw_boards = json.load(f)
+            seen_canon = set()
+            for k, v in raw_boards.items():
+                ck = _canonical_key(k, v.get('website', ''))
+                bh = f"{v.get('board_type')}::{v.get('handle')}" if (v.get('board_type') and v.get('handle')) else None
+                if (ck and ck in seen_canon) or (bh and bh in seen_canon):
+                    continue
+                boards_db[k] = v
+                if ck:
+                    seen_canon.add(ck)
+                if bh:
+                    seen_canon.add(bh)
         except Exception as e:
             print(f"Error loading {BOARDS_DB_PATH}: {e}")
 
@@ -928,6 +949,30 @@ def fetch_jobs_for_company(comp_name, config, regex):
         except Exception as e:
             print(f"Breezy error for {comp_name}: {e}")
 
+    elif b_type == 'personio':
+        handle = config.get('handle')
+        tld = config.get('tld', 'de')
+        if not handle:
+            return comp_name, jobs_list
+        try:
+            r = requests.get(f"https://{handle}.jobs.personio.{tld}/xml", timeout=12, headers=headers)
+            if r.status_code == 200:
+                import xml.etree.ElementTree as ET
+                root = ET.fromstring(r.text)
+                for pos in root.findall('.//position'):
+                    title = (pos.findtext('name') or '').strip()
+                    if regex.search(title):
+                        pid = pos.findtext('id') or ''
+                        office = pos.findtext('office') or 'N/A'
+                        link = f"https://{handle}.jobs.personio.{tld}/job/{pid}?language=en" if pid else f"https://{handle}.jobs.personio.{tld}"
+                        jobs_list.append({
+                            'title': title,
+                            'location': office,
+                            'link': link,
+                        })
+        except Exception as e:
+            print(f"Personio error for {comp_name}: {e}")
+
     elif b_type == 'generic_careers':
         website = config.get('website') or ''
         if not website:
@@ -953,7 +998,7 @@ def fetch_jobs_for_company(comp_name, config, regex):
         for full_url, text in links:
             parsed_url = urlparse(full_url)
             curr_domain = parsed_url.netloc.replace("www.", "")
-            if orig_domain in curr_domain or curr_domain == "":
+            if orig_domain in curr_domain or curr_domain == "" or any(d in curr_domain for d in KNOWN_JOB_DOMAINS):
                 path = parsed_url.path.lower()
                 text_lower = text.lower() if text else ""
                 if any(kw in path or kw in text_lower for kw in career_keywords):
@@ -1043,6 +1088,16 @@ def _is_real_job_title(title):
     if not title or len(title) < 4 or len(title) > 120:
         return False
     t = title.strip()
+    if re.search(r'\b\d+[\d,]*\s+open jobs\b', t, re.I):
+        return False
+    if re.search(r'\bread bio\b', t, re.I):
+        return False
+    if re.search(r'\bformer\s+(?:vp|director|ceo|cto)\b', t, re.I):
+        return False
+    if re.search(r'\b(?:co-?founders?|founders?)\b', t, re.I):
+        return False
+    if any(q in t for q in ['“', '”', '"']) and len(t.split()) > 6:
+        return False
     # Must contain at least one leadership keyword (already pre-filtered, but reaffirm)
     if not any(w in t.lower() for w in [
         "director", "vp", "vice president", "head", "chief",
@@ -1068,47 +1123,69 @@ def _is_generic_page(link):
     return p in ("", "/careers", "/jobs", "/career", "/job", "/openings", "/positions", "/work-with-us", "/join-us", "/opportunities")
 
 
-def _normalize_job(title, link):
-    from urllib.parse import urlparse
-    p = urlparse(link or "")
-    domain = p.netloc.lower().replace("www.", "")
-    full_url = (p.path + "?" + p.query).lower()
-    # Extract job ID from common URL patterns
-    job_id = None
+def _norm_title(title):
+    return re.sub(r'[^a-z0-9]', '', (title or "").lower())
+
+
+def _extract_job_id(link):
     for pattern in [
-        r"gh_jid=([0-9a-f]+)",     # Greenhouse
-        r"/jobs/([0-9a-f-]{20,})",  # Ashby
-        r"/[a-z0-9-]{20,}$",        # Lever UUID
-        r"_r-([0-9]+)",            # Workday
-        r"[?&]id=([0-9a-f-]+)",     # generic
+        r"gh_jid=([0-9a-f]+)",
+        r"/jobs/([0-9a-f-]{20,})",
+        r"/([a-z0-9-]{20,})$",
+        r"_r-([0-9]+)",
+        r"[?&]id=([0-9a-f-]+)",
+        r"/job/([0-9]+)",
     ]:
-        m = re.search(pattern, full_url)
+        m = re.search(pattern, link or "", re.I)
         if m:
-            job_id = m.group(1)
-            break
-    if job_id:
-        return f"{domain}::id::{job_id}"
-    # Fallback: domain + normalized title (letters and digits only)
-    t = re.sub(r'[^a-z0-9]', '', (title or "").lower())
-    return f"{domain}::title::{t}"
+            return m.group(1)
+    return None
 
 
 def _dedupe_jobs(jobs):
-    """Deduplicate jobs and filter out non-job content."""
-    seen = {}  # key -> first seen job
+    """Deduplicate jobs per company, prioritizing specific direct postings over generic career pages."""
+    jobs_by_id = {}
+    title_to_specific = {}
+    title_to_generic = {}
+
     for j in jobs:
         title = j.get("title", "")
         if not _is_real_job_title(title):
             continue
         link = j.get("link", "") or ""
-        key = _normalize_job(title, link)
-        if key not in seen:
-            seen[key] = j
+        jid = _extract_job_id(link)
+        nt = _norm_title(title)
+        is_gen = _is_generic_page(link)
+
+        if jid:
+            if jid in jobs_by_id:
+                continue
+            jobs_by_id[jid] = j
+            title_to_specific[nt] = j
         else:
-            # Upgrade from generic career listing link to specific job posting link if available
-            if _is_generic_page(seen[key].get("link")) and not _is_generic_page(link):
-                seen[key] = j
-    return list(seen.values())
+            if is_gen:
+                if nt in title_to_specific:
+                    continue
+                if nt not in title_to_generic:
+                    title_to_generic[nt] = j
+            else:
+                if nt in title_to_specific:
+                    continue
+                title_to_specific[nt] = j
+
+    for nt in list(title_to_generic.keys()):
+        if nt in title_to_specific:
+            del title_to_generic[nt]
+
+    all_jobs = list(jobs_by_id.values())
+    for nt, j in title_to_specific.items():
+        if j not in all_jobs:
+            all_jobs.append(j)
+    for nt, j in title_to_generic.items():
+        if j not in all_jobs:
+            all_jobs.append(j)
+
+    return all_jobs
 
 
 def generate_report(job_data):
